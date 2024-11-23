@@ -10,6 +10,12 @@ import { ProfileComponentComponent } from './components/profile-component/profil
 import { NotificationComponentComponent } from './components/notification-component/notification-component.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+import { MatButtonModule } from '@angular/material/button';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatInputModule } from '@angular/material/input';
+import { MatCardModule } from '@angular/material/card';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,7 +28,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatButtonModule,
+    MatToolbarModule,
+    MatInputModule,
+    MatCardModule    
   ],
   providers: [],
   bootstrap: [AppComponent]
