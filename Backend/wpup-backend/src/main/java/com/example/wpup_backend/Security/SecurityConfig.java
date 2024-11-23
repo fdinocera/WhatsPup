@@ -31,11 +31,15 @@ public class SecurityConfig {
         http
                 .csrf().disable() // Disabilita CSRF (opzionale, per test API)
                 .authorizeHttpRequests(authorize -> authorize
-                        .requestMatchers("/api/chat/**").permitAll() // Consenti l'accesso senza autenticazione
                         .requestMatchers("/api/auth/register/**").permitAll() // Consenti l'accesso senza autenticazione
+
+                        .requestMatchers("/api/chat/**").permitAll() // Consenti l'accesso senza autenticazione
+                        .requestMatchers("/api/chat/history/**").permitAll() // Consenti l'accesso senza autenticazione
+
                         .anyRequest().authenticated() // Richiedi autenticazione per tutto il resto
                 )
                 .oauth2Login(); // Configura OAuth2 per il resto delle API
+
 
         return http.build();
     }
